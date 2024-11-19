@@ -1,0 +1,757 @@
+
+*********General Stats***************
+################ (program : prog.ll)###############
+AddrsNum            28
+BBWith2Succ         3
+BBWith3Succ         0
+CallsNum            0
+ConstArrayObj       0
+ConstStructObj      0
+ConstantObj         0
+CopysNum            4
+FIObjNum            2
+FSObjNum            19
+FunctionObjs        9
+GepsNum             8
+GlobalObjs          2
+HeapObjs            3
+IndCallSites        0
+LoadsNum            16
+MaxStructSize       2
+NonPtrObj           16
+ReturnsNum          2
+StackObjs           6
+StoresNum           15
+TotalCallSite       9
+TotalFieldObjects   3
+TotalObjects        22
+TotalPTASVFStmts    49
+TotalPointers       109
+TotalSVFStmts       89
+VarArrayObj         0
+VarStructObj        2
+----------------Time and memory stats--------------------
+LLVMIRTime          0.01
+SVFIRTime           0
+SymbolTableTime     0.001
+#######################################################
+
+*********PTACallGraph Stats (Andersen analysis)***************
+################ (program : prog.ll)###############
+----------------Numbers stats----------------------------
+CalRetPairInCycle   0
+MaxNodeInCycle      0
+NodeInCycle         0
+TotalCycle          0
+TotalEdge           9
+TotalNode           9
+#######################################################
+
+*********Andersen Pointer Analysis Stats***************
+################ (program : prog.ll)###############
+----------------Time and memory stats--------------------
+AvgIn/OutAddrEdge   0.31746
+AvgIn/OutCopyEdge   0.460317
+AvgIn/OutEdge       1.06349
+AvgIn/OutLoadEdge   0.142857
+AvgIn/OutStoreEdge  0.142857
+AvgPtsSetSize       0.296552
+AvgTopLvlPtsSize    0.95
+CollapseTime        0
+CopyGepTime         0
+LoadStoreTime       0
+MemoryUsageVmrss    384
+MemoryUsageVmsize   132
+SCCDetectTime       0
+SCCMergeTime        0
+TotalTime           0
+UpdateCGTime        0
+----------------Numbers stats----------------------------
+AddrProcessed       20
+CopyProcessed       15
+DummyFieldPtrs      0
+FieldObjs           3
+GepProcessed        8
+IndCallSites        0
+IndEdgeSolved       0
+LoadProcessed       9
+LocalVarInRecur     0
+MaxInAddrEdge       1
+MaxInCopyEdge       2
+MaxInLoadEdge       1
+MaxInStoreEdge      2
+MaxNodesInSCC       0
+MaxOutAddrEdge      1
+MaxOutCopyEdge      4
+MaxOutLoadEdge      3
+MaxOutStoreEdge     3
+MaxPtsSetSize       1
+MemObjects          22
+NodesInCycles       0
+NullPointer         0
+NumOfAddrs          20
+NumOfCGEdge         47
+NumOfCGNode         69
+NumOfCopys          21
+NumOfFieldExpand    0
+NumOfGeps           8
+NumOfLoads          9
+NumOfSCCDetect      2
+NumOfSFRs           0
+NumOfStores         9
+NumOfValidNode      63
+NumOfValidObjNode   22
+Pointers            109
+PointsToBlkPtr      0
+PointsToConstPtr    0
+SolveIterations     2
+StoreProcessed      9
+TotalCycleNum       0
+TotalObjects        25
+TotalPWCCycleNum    0
+TotalPointers       109
+#######################################################
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 0 		PointsTo: {empty}
+
+----------------------------------------------
+
+Ptr 1 		PointsTo: {empty}
+
+----------------------------------------------
+##<Dummy Obj > id:2
+Ptr 2 		PointsTo: {empty}
+
+----------------------------------------------
+##<Dummy Obj > id:3
+Ptr 3 		PointsTo: {empty}
+
+----------------------------------------------
+##<zc_buf_tracker> Source Loc: { Glob "ln": 5, "fl": "2.c" }
+Ptr 4 		PointsTo: { 5 }
+
+!!Target NodeID 5	 [<zc_buf_tracker> Source Loc: { Glob "ln": 5, "fl": "2.c" }] 
+----------------------------------------------
+##<zc_buf_tracker> Source Loc: { Glob "ln": 5, "fl": "2.c" }
+Ptr 5 		PointsTo: { 125 }
+
+!!Target NodeID 125	 [<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }] 
+----------------------------------------------
+##<zc_on_heap> Source Loc: { Glob "ln": 4, "fl": "2.c" }
+Ptr 6 		PointsTo: { 7 }
+
+!!Target NodeID 7	 [<zc_on_heap> Source Loc: { Glob "ln": 4, "fl": "2.c" }] 
+----------------------------------------------
+##<zc_on_heap> Source Loc: { Glob "ln": 4, "fl": "2.c" }
+Ptr 7 		PointsTo: { 119 }
+
+!!Target NodeID 119	 [<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }] 
+----------------------------------------------
+##<main> Source Loc: { "ln": 21, "file": "1.c" }
+Ptr 8 		PointsTo: { 9 }
+
+!!Target NodeID 9	 [<main> Source Loc: { "ln": 21, "file": "1.c" }] 
+----------------------------------------------
+##<main> Source Loc: { "ln": 21, "file": "1.c" }
+Ptr 9 		PointsTo: {empty}
+
+----------------------------------------------
+##<main> Source Loc: { "ln": 21, "file": "1.c" }
+Ptr 10 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 22, "cl": 3, "fl": "1.c" }
+Ptr 11 		PointsTo: {empty}
+
+----------------------------------------------
+##<zc_storage_create> Source Loc: { "ln": 24, "file": "2.c" }
+Ptr 12 		PointsTo: { 13 }
+
+!!Target NodeID 13	 [<zc_storage_create> Source Loc: { "ln": 24, "file": "2.c" }] 
+----------------------------------------------
+##<zc_storage_create> Source Loc: { "ln": 24, "file": "2.c" }
+Ptr 13 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 23, "cl": 3, "fl": "1.c" }
+Ptr 14 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<foo> Source Loc: { "ln": 10, "file": "1.c" }
+Ptr 15 		PointsTo: { 16 }
+
+!!Target NodeID 16	 [<foo> Source Loc: { "ln": 10, "file": "1.c" }] 
+----------------------------------------------
+##<foo> Source Loc: { "ln": 10, "file": "1.c" }
+Ptr 16 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 24, "cl": 3, "fl": "1.c" }
+Ptr 17 		PointsTo: {empty}
+
+----------------------------------------------
+##<zc_storage_free> Source Loc: { "ln": 29, "file": "2.c" }
+Ptr 18 		PointsTo: { 19 }
+
+!!Target NodeID 19	 [<zc_storage_free> Source Loc: { "ln": 29, "file": "2.c" }] 
+----------------------------------------------
+##<zc_storage_free> Source Loc: { "ln": 29, "file": "2.c" }
+Ptr 19 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 25, "cl": 1, "fl": "1.c" }
+Ptr 20 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 21 		PointsTo: {empty}
+
+----------------------------------------------
+##<foo> Source Loc: { "ln": 10, "file": "1.c" }
+Ptr 22 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 11, "fl": "1.c" }
+Ptr 23 		PointsTo: { 24 }
+
+!!Target NodeID 24	 [<> Source Loc: { "ln": 11, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 11, "fl": "1.c" }
+Ptr 24 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 25 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 12, "fl": "1.c" }
+Ptr 26 		PointsTo: { 27 }
+
+!!Target NodeID 27	 [<> Source Loc: { "ln": 12, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 12, "fl": "1.c" }
+Ptr 27 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "fl": "1.c" }
+Ptr 28 		PointsTo: { 29 }
+
+!!Target NodeID 29	 [<> Source Loc: { "ln": 13, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "fl": "1.c" }
+Ptr 29 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 17, "fl": "1.c" }
+Ptr 30 		PointsTo: { 31 }
+
+!!Target NodeID 31	 [<> Source Loc: { "ln": 17, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 17, "fl": "1.c" }
+Ptr 31 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 11, "cl": 17, "fl": "1.c" }
+Ptr 32 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 12, "cl": 13, "fl": "1.c" }
+Ptr 33 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 12, "cl": 25, "fl": "1.c" }
+Ptr 34 		PointsTo: {empty}
+
+----------------------------------------------
+##<zc_get_buffer> Source Loc: { "ln": 7, "file": "2.c" }
+Ptr 35 		PointsTo: { 36 }
+
+!!Target NodeID 36	 [<zc_get_buffer> Source Loc: { "ln": 7, "file": "2.c" }] 
+----------------------------------------------
+##<zc_get_buffer> Source Loc: { "ln": 7, "file": "2.c" }
+Ptr 36 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 12, "cl": 25, "fl": "1.c" }
+Ptr 37 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 9, "fl": "1.c" }
+Ptr 38 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 25, "fl": "1.c" }
+Ptr 39 		PointsTo: { 144 }
+
+!!Target NodeID 144	 [<> Source Loc: { "ln": 12, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 25, "fl": "1.c" }
+Ptr 40 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 9, "fl": "1.c" }
+Ptr 41 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 6, "fl": "1.c" }
+Ptr 42 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 10, "fl": "1.c" }
+Ptr 43 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 6, "fl": "1.c" }
+Ptr 44 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }
+Ptr 45 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }
+Ptr 46 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 47 		PointsTo: {empty}
+
+----------------------------------------------
+##<malloc> Source Loc: 
+Ptr 48 		PointsTo: { 49 }
+
+!!Target NodeID 49	 [<malloc> Source Loc: ] 
+----------------------------------------------
+##<malloc> Source Loc: 
+Ptr 49 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 15, "cl": 7, "fl": "1.c" }
+Ptr 50 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 2, "fl": "1.c" }
+Ptr 51 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "basic block": , "location": { "ln": 17, "cl": 9, "fl": "1.c" } }
+Ptr 52 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 17, "cl": 9, "fl": "1.c" }
+Ptr 53 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 17, "cl": 16, "fl": "1.c" }
+Ptr 54 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 17, "cl": 9, "fl": "1.c" }
+Ptr 55 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 18, "cl": 10, "fl": "1.c" }
+Ptr 56 		PointsTo: { 46 }
+
+!!Target NodeID 46	 [<> Source Loc: { "ln": 15, "cl": 9, "fl": "1.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 18, "cl": 3, "fl": "1.c" }
+Ptr 57 		PointsTo: {empty}
+
+----------------------------------------------
+##<llvm.dbg.declare> Source Loc: 
+Ptr 58 		PointsTo: { 59 }
+
+!!Target NodeID 59	 [<llvm.dbg.declare> Source Loc: ] 
+----------------------------------------------
+##<llvm.dbg.declare> Source Loc: 
+Ptr 59 		PointsTo: {empty}
+
+----------------------------------------------
+##<llvm.dbg.declare> Source Loc: 
+Ptr 60 		PointsTo: {empty}
+
+----------------------------------------------
+##<0> Source Loc: { 0th arg llvm.dbg.declare  }
+Ptr 61 		PointsTo: {empty}
+
+----------------------------------------------
+##<1> Source Loc: { 1st arg llvm.dbg.declare  }
+Ptr 62 		PointsTo: {empty}
+
+----------------------------------------------
+##<2> Source Loc: { 2nd arg llvm.dbg.declare  }
+Ptr 63 		PointsTo: {empty}
+
+----------------------------------------------
+##<malloc> Source Loc: 
+Ptr 64 		PointsTo: {empty}
+
+----------------------------------------------
+##<0> Source Loc: { 0th arg malloc  }
+Ptr 65 		PointsTo: {empty}
+
+----------------------------------------------
+##<zc_get_buffer> Source Loc: { "ln": 7, "file": "2.c" }
+Ptr 66 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 9, "fl": "2.c" }
+Ptr 67 		PointsTo: { 68 }
+
+!!Target NodeID 68	 [<> Source Loc: { "ln": 9, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 9, "fl": "2.c" }
+Ptr 68 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 8, "fl": "2.c" }
+Ptr 69 		PointsTo: { 70 }
+
+!!Target NodeID 70	 [<> Source Loc: { "ln": 8, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 8, "fl": "2.c" }
+Ptr 70 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 8, "cl": 6, "fl": "2.c" }
+Ptr 71 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 8, "cl": 6, "fl": "2.c" }
+Ptr 72 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 9, "cl": 13, "fl": "2.c" }
+Ptr 73 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 10, "cl": 6, "fl": "2.c" }
+Ptr 74 		PointsTo: { 142 }
+
+!!Target NodeID 142	 [<> Source Loc: { "ln": 9, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 10, "cl": 10, "fl": "2.c" }
+Ptr 75 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 11, "cl": 6, "fl": "2.c" }
+Ptr 76 		PointsTo: { 143 }
+
+!!Target NodeID 143	 [<> Source Loc: { "ln": 9, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 11, "cl": 12, "fl": "2.c" }
+Ptr 77 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 78 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 12, "cl": 2, "fl": "2.c" }
+Ptr 79 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "basic block": , "location": { "ln": 13, "cl": 7, "fl": "2.c" } }
+Ptr 80 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 7, "fl": "2.c" }
+Ptr 81 		PointsTo: { 125 }
+
+!!Target NodeID 125	 [<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 22, "fl": "2.c" }
+Ptr 82 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 7, "fl": "2.c" }
+Ptr 83 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 7, "fl": "2.c" }
+Ptr 84 		PointsTo: { 125 }
+
+!!Target NodeID 125	 [<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 7, "fl": "2.c" }
+Ptr 85 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 25, "fl": "2.c" }
+Ptr 86 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 13, "cl": 7, "fl": "2.c" }
+Ptr 87 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 4, "fl": "2.c" }
+Ptr 88 		PointsTo: { 125 }
+
+!!Target NodeID 125	 [<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 19, "fl": "2.c" }
+Ptr 89 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 4, "fl": "2.c" }
+Ptr 90 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 4, "fl": "2.c" }
+Ptr 91 		PointsTo: { 125 }
+
+!!Target NodeID 125	 [<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 14, "cl": 22, "fl": "2.c" }
+Ptr 92 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 15, "cl": 16, "fl": "2.c" }
+Ptr 93 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 15, "cl": 8, "fl": "2.c" }
+Ptr 94 		PointsTo: { 143 }
+
+!!Target NodeID 143	 [<> Source Loc: { "ln": 9, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 15, "cl": 14, "fl": "2.c" }
+Ptr 95 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 14, "fl": "2.c" }
+Ptr 96 		PointsTo: { 119 }
+
+!!Target NodeID 119	 [<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 28, "fl": "2.c" }
+Ptr 97 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 29, "fl": "2.c" }
+Ptr 98 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 99 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 25, "fl": "2.c" }
+Ptr 100 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 25, "fl": "2.c" }
+Ptr 101 		PointsTo: { 119 }
+
+!!Target NodeID 119	 [<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 8, "fl": "2.c" }
+Ptr 102 		PointsTo: { 142 }
+
+!!Target NodeID 142	 [<> Source Loc: { "ln": 9, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 16, "cl": 12, "fl": "2.c" }
+Ptr 103 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 17, "cl": 4, "fl": "2.c" }
+Ptr 104 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "basic block": , "location": { "ln": 22, "cl": 1, "fl": "2.c" } }
+Ptr 105 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 19, "cl": 2, "fl": "2.c" }
+Ptr 106 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "basic block": , "location": { "ln": 19, "cl": 11, "fl": "2.c" } }
+Ptr 107 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 19, "cl": 11, "fl": "2.c" }
+Ptr 108 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 19, "cl": 11, "fl": "2.c" }
+Ptr 109 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 19, "cl": 11, "fl": "2.c" }
+Ptr 110 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 19, "cl": 15, "fl": "2.c" }
+Ptr 111 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 112 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 19, "cl": 2, "fl": "2.c" }
+Ptr 113 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 21, "cl": 2, "fl": "2.c" }
+Ptr 114 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 22, "cl": 1, "fl": "2.c" }
+Ptr 115 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 22, "cl": 1, "fl": "2.c" }
+Ptr 116 		PointsTo: {empty}
+
+----------------------------------------------
+##<zc_storage_create> Source Loc: { "ln": 24, "file": "2.c" }
+Ptr 117 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }
+Ptr 118 		PointsTo: { 119 }
+
+!!Target NodeID 119	 [<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }
+Ptr 119 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 120 		PointsTo: {empty}
+
+----------------------------------------------
+##<calloc> Source Loc: 
+Ptr 121 		PointsTo: { 122 }
+
+!!Target NodeID 122	 [<calloc> Source Loc: ] 
+----------------------------------------------
+##<calloc> Source Loc: 
+Ptr 122 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 25, "cl": 13, "fl": "2.c" }
+Ptr 123 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }
+Ptr 124 		PointsTo: { 125 }
+
+!!Target NodeID 125	 [<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }
+Ptr 125 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { constant data }
+Ptr 126 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 26, "cl": 17, "fl": "2.c" }
+Ptr 127 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 27, "cl": 1, "fl": "2.c" }
+Ptr 128 		PointsTo: {empty}
+
+----------------------------------------------
+##<calloc> Source Loc: 
+Ptr 129 		PointsTo: {empty}
+
+----------------------------------------------
+##<0> Source Loc: { 0th arg calloc  }
+Ptr 130 		PointsTo: {empty}
+
+----------------------------------------------
+##<1> Source Loc: { 1st arg calloc  }
+Ptr 131 		PointsTo: {empty}
+
+----------------------------------------------
+##<zc_storage_free> Source Loc: { "ln": 29, "file": "2.c" }
+Ptr 132 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 30, "cl": 7, "fl": "2.c" }
+Ptr 133 		PointsTo: { 119 }
+
+!!Target NodeID 119	 [<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 30, "cl": 2, "fl": "2.c" }
+Ptr 134 		PointsTo: {empty}
+
+----------------------------------------------
+##<free> Source Loc: 
+Ptr 135 		PointsTo: { 136 }
+
+!!Target NodeID 136	 [<free> Source Loc: ] 
+----------------------------------------------
+##<free> Source Loc: 
+Ptr 136 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 31, "cl": 7, "fl": "2.c" }
+Ptr 137 		PointsTo: { 125 }
+
+!!Target NodeID 125	 [<> Source Loc: { "ln": 26, "cl": 19, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 31, "cl": 2, "fl": "2.c" }
+Ptr 138 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 32, "cl": 1, "fl": "2.c" }
+Ptr 139 		PointsTo: {empty}
+
+----------------------------------------------
+##<free> Source Loc: 
+Ptr 140 		PointsTo: {empty}
+
+----------------------------------------------
+##<0> Source Loc: { 0th arg free  }
+Ptr 141 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 9, "fl": "2.c" }
+Ptr 142 		PointsTo: { 119 }
+
+!!Target NodeID 119	 [<> Source Loc: { "ln": 25, "cl": 15, "fl": "2.c" }] 
+----------------------------------------------
+##<> Source Loc: { "ln": 9, "fl": "2.c" }
+Ptr 143 		PointsTo: {empty}
+
+----------------------------------------------
+##<> Source Loc: { "ln": 12, "fl": "1.c" }
+Ptr 144 		PointsTo: {empty}
+
+----------------------------------------------
+
+****Persistent Points-To Cache Statistics: Andersen's analysis bitvector****
+################ (program : prog.ll)###############
+UniquePointsToSets       24
+TotalUnions              43
+PropertyUnions           43
+UniqueUnions             0
+LookupUnions             0
+PreemptiveUnions         0
+TotalComplements         135
+PropertyComplements      135
+UniqueComplements        0
+LookupComplements        0
+PreemptiveComplements    0
+TotalIntersections       18
+PropertyIntersections    18
+UniqueIntersections      0
+LookupIntersections      0
+PreemptiveIntersections  0
+#######################################################
